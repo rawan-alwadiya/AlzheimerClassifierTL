@@ -11,8 +11,7 @@ This project delivers a complete **computer vision pipeline**—from **data expl
 
 - 🎥 [LinkedIn Demo Post](https://www.linkedin.com/posts/rawan-alwadeya-17948a305_deeplearning-transferlearning-resnet50-activity-7374182255985946624-P-8j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE3YzG0BAZw48kimDDr_guvq8zXgSjDgk_I)  
 - 🌐 [Live App – Streamlit](https://alzheimerclassifiertl-otxrv2bgjegphrzmwmupqb.streamlit.app/)  
-- 🤗 [Hugging Face Repo](https://huggingface.co/RawanAlwadeya/AlzheimerClassifierTL)  
-- 💻 [GitHub Repository](https://github.com/rawan-alwadiya/AlzheimerClassifierTL)  
+- 🤗 [Hugging Face Repo](https://huggingface.co/RawanAlwadeya/AlzheimerClassifierTL)   
 - 📓 [Kaggle Notebook](https://www.kaggle.com/code/rawanalwadeya/alzheimerclassifiertl-resnet50-transfer-learning)
 
 ![App Demo](./Alzheimer%20Detection%20App.png)  
