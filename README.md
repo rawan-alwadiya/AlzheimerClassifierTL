@@ -1,17 +1,18 @@
 # **AlzheimerClassifierTL: ResNet50-Based Alzheimer’s MRI Classifier**
 
-AlzheimerClassifierTL is a deep learning project that uses **transfer learning with ResNet50** to classify **brain MRI scans** into four cognitive health categories:  
-🟢 **NonDemented** • 🟡 **Very Mild Demented** • 🟠 **Mild Demented** • 🔴 **Moderate Demented**  
+AlzheimerClassifierTL applies **transfer learning with ResNet50** to classify **brain MRI scans** into four cognitive health categories:  
+🟢 **NonDemented** • 🟡 **Very Mild Demented** • 🟠 **Mild Demented** • 🔴 **Moderate Demented**
 
-It demonstrates a complete **end-to-end computer vision workflow** including **data exploration, augmentation, ResNet50 fine-tuning, evaluation, and deployment with Streamlit & Hugging Face**.
+This project delivers a complete **computer vision pipeline**—from **data exploration and augmentation** to **model training, evaluation, and real-time deployment** using **Streamlit** and **Hugging Face**.
 
 ---
 
 ## **Demo**
 
-- 🎥 [View LinkedIn Demo Post](https://www.linkedin.com/posts/rawan-alwadeya-17948a305_deeplearning-transferlearning-resnet50-activity-7374182255985946624-P-8j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE3YzG0BAZw48kimDDr_guvq8zXgSjDgk_I)  
-- 🌐 [Try the App Live on Streamlit](https://alzheimerclassifiertl-otxrv2bgjegphrzmwmupqb.streamlit.app/)  
-- 🤗 [Explore on Hugging Face](https://huggingface.co/RawanAlwadeya/AlzheimerClassifierTL)  
+- 🎥 [LinkedIn Demo Post](https://www.linkedin.com/posts/rawan-alwadeya-17948a305_deeplearning-transferlearning-resnet50-activity-7374182255985946624-P-8j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE3YzG0BAZw48kimDDr_guvq8zXgSjDgk_I)  
+- 🌐 [Live App – Streamlit](https://alzheimerclassifiertl-otxrv2bgjegphrzmwmupqb.streamlit.app/)  
+- 🤗 [Hugging Face Repo](https://huggingface.co/RawanAlwadeya/AlzheimerClassifierTL)  
+- 💻 [GitHub Repository](https://github.com/rawan-alwadiya/AlzheimerClassifierTL)  
 - 📓 [Kaggle Notebook](https://www.kaggle.com/code/rawanalwadeya/alzheimerclassifiertl-resnet50-transfer-learning)
 
 ![App Demo](./Alzheimer%20Detection%20App.png)  
@@ -22,51 +23,39 @@ It demonstrates a complete **end-to-end computer vision workflow** including **d
 
 ---
 
-## **Project Overview**
-
-**AlzheimerClassifierTL** is a deep learning project that classifies **brain MRI images** into four cognitive health categories:  
-- 🟢 **NonDemented**  
-- 🟡 **Very Mild Demented**  
-- 🟠 **Mild Demented**  
-- 🔴 **Moderate Demented**  
-
-The workflow includes **data exploration, visualization, and transfer learning** using **ResNet50**, followed by deployment as an interactive **Streamlit application** and publication on **Hugging Face**.
-
----
-
 ## **Objective**
 
-Develop and deploy a reliable **transfer learning model** to support the early detection of **Alzheimer’s disease**, a progressive neurological disorder that impacts **memory and cognitive function**.  
-Early identification of dementia stages can help guide timely medical consultation and care.
+Develop and deploy a robust deep learning model to support **early detection of Alzheimer’s disease**, a progressive neurological disorder affecting **memory and cognitive function**.  
+Accurate staging of dementia enables timely medical consultation and care.
 
 ---
 
 ## **Dataset**
 
 - **Source**: [Kaggle – Augmented Alzheimer MRI Dataset](https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset/data)  
-- **Preprocessing**:  
+- **Preparation**:  
   - Images resized to **224×224 (RGB)**  
-  - Normalized using **ResNet50 preprocess_input**  
-  - Split into **train, validation, and test sets** with balanced distribution  
+  - Normalized with **ResNet50 preprocess_input**  
+  - Balanced **train/validation/test** splits  
 
 ---
 
 ## **Modeling Approach**
 
-- **Base Model**: **ResNet50** pre-trained on ImageNet, with top layers removed and a global max pooling layer added  
-- **Custom Layers**: Batch normalization, fully connected dense layer (256 units, L1/L2 regularization), and dropout (0.45)  
-- **Output Layer**: Dense layer with softmax activation for 4-class prediction  
+- **Base Network**: **ResNet50** pre-trained on ImageNet  
+- **Custom Layers**: Global max pooling, batch normalization, dense layer (256 units, L1/L2 regularization), dropout (0.45)  
+- **Output Layer**: Softmax activation for 4-class prediction  
 - **Training Setup**:  
   - Loss: **Categorical Crossentropy**  
   - Optimizer: **Adamax** (learning rate 0.001)  
-  - Data augmentation (rotation, width/height shift, zoom, nearest-neighbor fill) applied to training set only  
-  - EarlyStopping and ModelCheckpoint callbacks to prevent overfitting  
+  - Augmentation: rotation, width/height shift, zoom (training set only)  
+  - Callbacks: **EarlyStopping** & **ModelCheckpoint** to prevent overfitting  
 
 ---
 
 ## **Performance**
 
-The final model achieved strong results on the test set:  
+Final model results on the test set:  
 - **Accuracy**: `98.3%`  
 - **Precision**: `98.9%`  
 - **Recall**: `93.8%`  
@@ -76,23 +65,21 @@ The final model achieved strong results on the test set:
 
 ## **Deployment**
 
-Users can upload an MRI image to get **real-time, color-coded predictions** for dementia stage.
-
-- **Streamlit App**: [AlzheimerClassifierTL](https://alzheimerclassifiertl-otxrv2bgjegphrzmwmupqb.streamlit.app/)  
-- **Hugging Face Repo**: [AlzheimerClassifierTL](https://huggingface.co/RawanAlwadeya/AlzheimerClassifierTL)
+The trained model powers an interactive **Streamlit web app** and a **Hugging Face Space** for real-time predictions.  
+Users can upload an MRI image and receive **instant, color-coded stage classification**.
 
 ---
 
 ## **Tech Stack**
 
-**Languages & Libraries**:  
+**Languages & Libraries**  
 - Python, Pandas, NumPy  
 - TensorFlow / Keras, scikit-learn  
 - Matplotlib, Seaborn  
-- Streamlit (Deployment)
+- Streamlit  
 
-**Techniques**:  
-- Transfer Learning (ResNet50 fine-tuning)  
-- Data Augmentation (rotation, width/height shift, zoom)  
+**Techniques**  
+- Transfer Learning (**ResNet50 fine-tuning**)  
+- Data Augmentation (rotation, shift, zoom)  
 - EarlyStopping & ModelCheckpoint  
 - Real-time deployment with **Streamlit** & **Hugging Face**
